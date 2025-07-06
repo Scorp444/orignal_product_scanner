@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ContentAI Pro | Premium Content Creation Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #4F46E5;
+            --primary-dark: #3730A3;
+            --secondary: #10B981;
+            --premium: #F59E0B;
+        }
+        
+        .premium-badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--premium);
+            color: white;
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 9999px;
+            font-weight: 600;
+        }
+        
+        .premium-feature {
+            position: relative;
+            border: 1px solid var(--premium);
+        }
+        
+        .premium-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            z-index: 10;
+        }
+        
+        .upgrade-btn {
+            background: linear-gradient(135deg, var(--premium) 0%, #D97706 100%);
+        }
+        
+        .dark .premium-overlay {
+            background: rgba(0,0,0,0.7);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900">
+    <div class="min-h-screen">
+        <!-- Header with Upgrade Button -->
+        <header class="bg-white dark:bg-gray-800 shadow-sm">
+            <div class="container mx-auto px-4 py-4">
+                <div class="flex justify-between items-center">
+                    <div class="flex items-center space-x-3">
+                        <div class="flex items-center justify-center w-10 h-10 bg-indigo-100 dark:bg-indigo-900 rounded-lg">
+                            <i class="fas fa-brain text-indigo-600 dark:text-indigo-300"></i>
+                        </div>
+                        <h1 class="text-xl font-semibold dark:text-white">ContentAI Pro</h1>
+                    </div>
+                    
+                    <div class="flex items-center space-x-4">
+                        <button class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">
+                            Pricing
+                        </button>
+                        <button class="px-4 py-2 bg-indigo-600 text-white text-sm font-medium rounded-lg hover:bg-indigo-700 transition">
+                            Upgrade Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="container mx-auto px-4 py-8">
+            <!-- Free vs Premium Comparison -->
+            <section class="mb-12">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-2xl font-bold dark:text-white">Choose Your Plan</h2>
+                    <div class="flex items-center space-x-2">
+                        <span class="text-sm text-gray-600 dark:text-gray-300">Monthly</span>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" class="sr-only peer">
+                            <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-indigo-600"></div>
+                            <span class="ml-3 text-sm font-medium text-gray-600 dark:text-gray-300">Yearly (Save 20%)</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Free Plan -->
+                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden">
+                        <div class="p-6 border-b border-gray-200 dark:border-gray-700">
+                            <h3 class="text-lg font-semibold dark:text-white">Starter</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mt-1">For individuals getting started</p>
+                            <div class="mt-4">
+                                <span class="text-3xl font-bold dark:text-white">$0</span>
+                                <span class="text-gray-500 dark:text-gray-400">/month</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <ul class="space-y-3">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span class="dark:text-gray-300">Basic content generation</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span class="dark:text-gray-300">5 content pieces/month</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span class="dark:text-gray-300">Standard templates</span>
+                                </li>
+                                <li class="flex items-center text-gray-400">
+                                    <i class="fas fa-times text-gray-400 mr-2"></i>
+                                    <span>Advanced AI models</span>
+                                </li>
+                                <li class="flex items-center text-gray-400">
+                                    <i class="fas fa-times text-gray-400 mr-2"></i>
+                                    <span>Team collaboration</span>
+                                </li>
+                                <li class="flex items-center text-gray-400">
+                                    <i class="fas fa-times text-gray-400 mr-2"></i>
+                                    <span>Priority support</span>
+                                </li>
+                            </ul>
+                            <button class="w-full mt-6 px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-700 dark:text-gray-300 font-medium hover:bg-gray-50 dark:hover:bg-gray-700 transition">
+                                Current Plan
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Pro Plan -->
+                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden border-2 border-indigo-500 relative">
+                        <div class="absolute top-4 right-4 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 text-xs font-semibold px-2 py-1 rounded-full">
+                            POPULAR
+                        </div>
+                        <div class="p-6 border-b border-gray-200 dark:border-gray-700">
+                            <h3 class="text-lg font-semibold dark:text-white">Professional</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mt-1">For serious content creators</p>
+                            <div class="mt-4">
+                                <span class="text-3xl font-bold dark:text-white">$29</span>
+                                <span class="text-gray-500 dark:text-gray-400">/month</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <ul class="space-y-3">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span class="dark:text-gray-300">Advanced content generation</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span class="dark:text-gray-300">100 content pieces/month</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span class="dark:text-gray-300">Premium templates</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span class="dark:text-gray-300">GPT-4 model access</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span class="dark:text-gray-300">Team collaboration (3 members)</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span class="dark:text-gray-300">Priority email support</span>
+                                </li>
+                            </ul>
+                            <button class="w-full mt-6 px-4 py-2 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition">
+                                Upgrade Now
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Enterprise Plan -->
+                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden">
+                        <div class="p-6 border-b border-gray-200 dark:border-gray-700">
+                            <h3 class="text-lg font-semibold dark:text-white">Enterprise</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mt-1">For teams and agencies</p>
+                            <div class="mt-4">
+                                <span class="text-3xl font-bold dark:text-white">$99</span>
+                                <span class="text-gray-500 dark:text-gray-400">/month</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <ul class="space-y-3">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span class="dark:text-gray-300">Unlimited content generation</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span class="dark:text-gray-300">Unlimited content pieces</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span class="dark:text-gray-300">All premium templates</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span class="dark:text-gray-300">GPT-4 Turbo access</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span class="dark:text-gray-300">Unlimited team members</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span class="dark:text-gray-300">24/7 priority support</span>
+                                </li>
+                            </ul>
+                            <button class="w-full mt-6 px-4 py-2 bg-gray-800 dark:bg-gray-700 text-white font-medium rounded-lg hover:bg-gray-900 dark:hover:bg-gray-600 transition">
+                                Contact Sales
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Premium Features Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold mb-6 dark:text-white">Premium Features</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Premium Feature 1 -->
+                    <div class="premium-feature bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 relative">
+                        <div class="premium-badge">PRO</div>
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-indigo-100 dark:bg-indigo-900 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-bolt text-indigo-600 dark:text-indigo-300 text-xl"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold dark:text-white">Advanced AI Models</h3>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Access to GPT-4 and Claude 2 models for higher quality content generation with better context understanding.
+                        </p>
+                        <div class="premium-overlay rounded-lg">
+                            <p class="font-medium mb-2">Upgrade to unlock</p>
+                            <button class="upgrade-btn px-4 py-2 text-white font-medium rounded-lg">
+                                Upgrade Now
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Premium Feature 2 -->
+                    <div class="premium-feature bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 relative">
+                        <div class="premium-badge">PRO</div>
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-users text-green-600 dark:text-green-300 text-xl"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold dark:text-white">Team Collaboration</h3>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Invite team members, assign roles, and collaborate on content creation with version history and comments.
+                        </p>
+                        <div class="premium-overlay rounded-lg">
+                            <p class="font-medium mb-2">Upgrade to unlock</p>
+                            <button class="upgrade-btn px-4 py-2 text-white font-medium rounded-lg">
+                                Upgrade Now
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Premium Feature 3 -->
+                    <div class="premium-feature bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 relative">
+                        <div class="premium-badge">PRO</div>
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-chart-line text-purple-600 dark:text-purple-300 text-xl"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold dark:text-white">Advanced Analytics</h3>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Get detailed performance metrics, engagement analysis, and content optimization suggestions.
+                        </p>
+                        <div class="premium-overlay rounded-lg">
+                            <p class="font-medium mb-2">Upgrade to unlock</p>
+                            <button class="upgrade-btn px-4 py-2 text-white font-medium rounded-lg">
+                                Upgrade Now
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Premium Feature 4 -->
+                    <div class="premium-feature bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 relative">
+                        <div class="premium-badge">PRO</div>
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-calendar-alt text-blue-600 dark:text-blue-300 text-xl"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold dark:text-white">Content Calendar</h3>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Plan, schedule, and manage your content pipeline with our advanced editorial calendar.
+                        </p>
+                        <div class="premium-overlay rounded-lg">
+                            <p class="font-medium mb-2">Upgrade to unlock</p>
+                            <button class="upgrade-btn px-4 py-2 text-white font-medium rounded-lg">
+                                Upgrade Now
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Premium Feature 5 -->
+                    <div class="premium-feature bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 relative">
+                        <div class="premium-badge">PRO</div>
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-yellow-100 dark:bg-yellow-900 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-search text-yellow-600 dark:text-yellow-300 text-xl"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold dark:text-white">SEO Optimization</h3>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Advanced SEO tools including keyword research, competitor analysis, and content scoring.
+                        </p>
+                        <div class="premium-overlay rounded-lg">
+                            <p class="font-medium mb-2">Upgrade to unlock</p>
+                            <button class="upgrade-btn px-4 py-2 text-white font-medium rounded-lg">
+                                Upgrade Now
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Premium Feature 6 -->
+                    <div class="premium-feature bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 relative">
+                        <div class="premium-badge">PRO</div>
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-red-100 dark:bg-red-900 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-headset text-red-600 dark:text-red-300 text-xl"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold dark:text-white">Priority Support</h3>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Get faster response times with our dedicated support team available 24/7 for premium users.
+                        </p>
+                        <div class="premium-overlay rounded-lg">
+                            <p class="font-medium mb-2">Upgrade to unlock</p>
+                            <button class="upgrade-btn px-4 py-2 text-white font-medium rounded-lg">
+                                Upgrade Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Free Feature Examples -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold mb-6 dark:text-white">Free Features</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Free Feature 1 -->
+                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-indigo-100 dark:bg-indigo-900 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-edit text-indigo-600 dark:text-indigo-300 text-xl"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold dark:text-white">Basic Content Generation</h3>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300">
+                            Create up to 5 content pieces per month using our standard AI models with basic templates.
+                        </p>
+                    </div>
+                    
+                    <!-- Free Feature 2 -->
+                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-file-alt text-green-600 dark:text-green-300 text-xl"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold dark:text-white">Content Library</h3>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300">
+                            Save and organize your generated content with basic search and filtering capabilities.
+                        </p>
+                    </div>
+                    
+                    <!-- Free Feature 3 -->
+                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-chart-pie text-purple-600 dark:text-purple-300 text-xl"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold dark:text-white">Basic Analytics</h3>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300">
+                            View basic performance metrics for your published content with 30-day history.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- FAQ Section -->
+        <section class="bg-gray-50 dark:bg-gray-800 py-12">
+            <div class="container mx-auto px-4">
+                <h2 class="text-2xl font-bold mb-8 text-center dark:text-white">Frequently Asked Questions</h2>
+                <div class="max-w-3xl mx-auto">
+                    <div class="bg-white dark:bg-gray-700 rounded-lg shadow-md mb-4 overflow-hidden">
+                        <button class="faq-toggle w-full px-6 py-4 text-left flex justify-between items-center">
+                            <span class="font-medium dark:text-white">What payment methods do you accept?</span>
+                            <i class="fas fa-chevron-down transition-transform"></i>
+                        </button>
+                        <div class="faq-content px-6 pb-4 hidden">
+                            <p class="text-gray-600 dark:text-gray-300">
+                                We accept all major credit cards (Visa, Mastercard, American Express), PayPal, and bank transfers for annual plans. All payments are processed securely through Stripe.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white dark:bg-gray-700 rounded-lg shadow-md mb-4 overflow-hidden">
+                        <button class="faq-toggle w-full px-6 py-4 text-left flex justify-between items-center">
+                            <span class="font-medium dark:text-white">Can I cancel my subscription anytime?</span>
+                            <i class="fas fa-chevron-down transition-transform"></i>
+                        </button>
+                        <div class="faq-content px-6 pb-4 hidden">
+                            <p class="text-gray-600 dark:text-gray-300">
+                                Yes, you can cancel your subscription at any time. If you cancel, you'll continue to have access to premium features until the end of your current billing period.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white dark:bg-gray-700 rounded-lg shadow-md mb-4 overflow-hidden">
+                        <button class="faq-toggle w-full px-6 py-4 text-left flex justify-between items-center">
+                            <span class="font-medium dark:text-white">Is there a free trial for premium features?</span>
+                            <i class="fas fa-chevron-down transition-transform"></i>
+                        </button>
+                        <div class="faq-content px-6 pb-4 hidden">
+                            <p class="text-gray-600 dark:text-gray-300">
+                                Yes! We offer a 7-day free trial for our Professional plan. No credit card is required to start the trial, and you can cancel anytime during the trial period without being charged.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden">
+                        <button class="faq-toggle w-full px-6 py-4 text-left flex justify-between items-center">
+                            <span class="font-medium dark:text-white">How do I upgrade my plan?</span>
+                            <i class="fas fa-chevron-down transition-transform"></i>
+                        </button>
+                        <div class="faq-content px-6 pb-4 hidden">
+                            <p class="text-gray-600 dark:text-gray-300">
+                                You can upgrade your plan at any time from your account settings. Any unused portion of your current plan will be prorated and applied to your new subscription.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
+            <div class="container mx-auto px-4 py-8">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div>
+                        <h3 class="font-semibold mb-4 dark:text-white">ContentAI Pro</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm">
+                            The most advanced AI-powered content creation platform for marketers, writers, and businesses.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold mb-4 dark:text-white">Product</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 text-sm">Features</a></li>
+                            <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 text-sm">Pricing</a></li>
+                            <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 text-sm">API</a></li>
+                            <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 text-sm">Integrations</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold mb-4 dark:text-white">Resources</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 text-sm">Documentation</a></li>
+                            <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 text-sm">Blog</a></li>
+                            <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 text-sm">Tutorials</a></li>
+                            <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 text-sm">Support</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold mb-4 dark:text-white">Company</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 text-sm">About</a></li>
+                            <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 text-sm">Careers</a></li>
+                            <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 text-sm">Privacy</a></li>
+                            <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 text-sm">Terms</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="border-t border-gray-200 dark:border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-500 dark:text-gray-400 text-sm mb-4 md:mb-0">© 2023 ContentAI Pro. All rights reserved.</p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-500 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-500 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="text-gray-500 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Toggle FAQ items
+        document.querySelectorAll('.faq-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                
+                content.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+        
+        // Theme toggle
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            
+            if (document.documentElement.classList.contains('dark')) {
+                localStorage.setItem('theme', 'dark');
+                themeToggle.innerHTML = '<i class="far fa-sun"></i>';
+            } else {
+                localStorage.setItem('theme', 'light');
+                themeToggle.innerHTML = '<i class="far fa-moon"></i>';
+            }
+        });
+        
+        // Check for saved theme preference
+        if (localStorage.getItem('theme') === 'dark' || 
+            (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            themeToggle.innerHTML = '<i class="far fa-sun"></i>';
+        } else {
+            document.documentElement.classList.remove('dark');
+            themeToggle.innerHTML = '<i class="far fa-moon"></i>';
+        }
+    </script>
+</body>
+</html>
+
